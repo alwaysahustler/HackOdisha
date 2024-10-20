@@ -7,18 +7,17 @@ import { v4 as uuidv4 } from 'uuid'
 
 export default function Home() {
   const router = useRouter()
-  const [roomIdInput, setRoomIdInput] = useState('') // State to hold the room ID input
+  const [roomIdInput, setRoomIdInput] = useState('') 
 
-  // Create a new room
+ 
   const createRoom = () => {
-    const roomId = uuidv4() // Generates a unique ID for each room
-    router.push(`/room/${roomId}`) // Redirect to the new room page
+    const roomId = uuidv4()
+    router.push(`/room/${roomId}`) 
   }
 
-  // Join an existing room
   const joinRoom = () => {
     if (roomIdInput.trim()) {
-      router.push(`/room/${roomIdInput.trim()}`) // Redirect to the existing room page
+      router.push(`/room/${roomIdInput.trim()}`) 
     }
   }
 
@@ -30,7 +29,7 @@ export default function Home() {
         onClick={createRoom}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4"
       >
-        Create New Room
+        
       </button>
 
       <div className="flex flex-col items-center">
